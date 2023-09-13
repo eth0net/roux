@@ -175,6 +175,13 @@ impl Reddit {
         Ok(me::Me::new(&reddit.config, &reddit.client))
     }
 
+    /// Create a new authenticated `Multis` instance.
+    #[maybe_async::maybe_async]
+    pub async fn multis(self) -> Result<models::Multis, util::RouxError> {
+        let reddit = self.create_client().await?;
+        Ok(models::Multis::new_oauth(&reddit.client))
+    }
+
     /// Create a new authenticated `Subreddit` instance.
     #[maybe_async::maybe_async]
     pub async fn subreddit(self, name: &str) -> Result<models::Subreddit, util::RouxError> {
