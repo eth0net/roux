@@ -19,7 +19,7 @@ pub use friend::Friend;
 pub use inbox::Inbox;
 pub use me::Me;
 pub use moderator::Moderators;
-pub use multi::Multis;
+pub use multi::{Multi, Multis};
 pub use overview::Overview;
 pub use reply::{MaybeReplies, Replies};
 pub use saved::Saved;
