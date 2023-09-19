@@ -5,7 +5,7 @@ use serde_json::Value;
 use crate::models::response::BasicListing;
 
 /// SubmissionsData
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct SubmissionData {
     /// The domain of the link (if link post) or self.subreddit (if self post).
     /// Domains do not include a protocol, e.g. `i.redd.it` or `self.learnprogramming`
@@ -140,7 +140,7 @@ pub struct SubmissionData {
 }
 
 /// SubmissionDataPreview
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct SubmissionDataPreview {
     /// List of preview images.
     pub images: Vec<SubmissionDataPreviewImage>,
@@ -149,7 +149,7 @@ pub struct SubmissionDataPreview {
 }
 
 /// SubmissionDataPreviewImage
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct SubmissionDataPreviewImage {
     /// Object for the main preview image containing URL, width and height.
     pub source: SubmissionDataPreviewImageSource,
@@ -161,7 +161,7 @@ pub struct SubmissionDataPreviewImage {
 }
 
 /// SubmissionDataPreviewImageSource
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct SubmissionDataPreviewImageSource {
     /// URL
     pub url: String,
